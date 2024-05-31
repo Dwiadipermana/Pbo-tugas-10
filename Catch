@@ -1,0 +1,19 @@
+public class ExceptionHandlingExample {
+    public static void main(String[] args) {
+        try {
+            // Membuat array dengan 5 elemen
+            int[] numbers = {1, 2, 3, 4, 5};
+            
+            // Mengakses elemen di luar batas array
+            System.out.println(numbers[10]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            // Menangani exception jika terjadi akses elemen di luar batas array
+            System.out.println("Error: Anda mencoba mengakses elemen di luar batas array.");
+        } finally {
+            // Blok ini akan selalu dieksekusi
+            System.out.println("Blok finally dieksekusi.");
+        }
+        
+        System.out.println("Program selesai.");
+    }
+}
