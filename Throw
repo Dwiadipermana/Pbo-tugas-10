@@ -1,0 +1,20 @@
+public class ThrowExample {
+    public static void main(String[] args) {
+        try {
+            // Memanggil metode yang melemparkan exception
+            validateAge(15);
+        } catch (Exception e) {
+            // Menangani exception yang dilemparkan oleh metode validateAge()
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+    
+    public static void validateAge(int age) throws IllegalArgumentException {
+        // Melemparkan exception jika umur tidak valid
+        if (age < 18) {
+            throw new IllegalArgumentException("Umur harus lebih dari atau sama dengan 18 tahun.");
+        } else {
+            System.out.println("Umur valid.");
+        }
+    }
+}
