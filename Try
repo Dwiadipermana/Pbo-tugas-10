@@ -1,0 +1,17 @@
+public class TryExample {
+    public static void main(String[] args) {
+        try {
+            // Membagi dua bilangan
+            int hasil = divide(10, 0);
+            System.out.println("Hasil pembagian: " + hasil);
+        } catch (ArithmeticException e) {
+            // Menangani exception jika terjadi pembagian dengan nol
+            System.out.println("Error: Pembagian dengan nol.");
+        }
+    }
+    
+    public static int divide(int num1, int num2) {
+        // Mencoba melakukan pembagian
+        return num1 / num2;
+    }
+}
