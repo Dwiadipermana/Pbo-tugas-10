@@ -1,0 +1,23 @@
+import java.io.*;
+
+public class ThrowsExample {
+    public static void main(String[] args) {
+        try {
+            // Memanggil metode yang melemparkan IOException
+            readFile("example.txt");
+        } catch (IOException e) {
+            // Menangani exception IOException yang dilemparkan oleh metode readFile()
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+    
+    public static void readFile(String fileName) throws IOException {
+        // Membaca file
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        // Membaca baris pertama dari file
+        String line = reader.readLine();
+        System.out.println("Baris pertama: " + line);
+        // Menutup file
+        reader.close();
+    }
+}
