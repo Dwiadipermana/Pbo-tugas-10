@@ -1,0 +1,27 @@
+import java.io.*;
+
+public class FinallyExample {
+    public static void main(String[] args) {
+        BufferedReader reader = null;
+        try {
+            // Membuka file
+            reader = new BufferedReader(new FileReader("example.txt"));
+            // Membaca baris pertama dari file
+            String line = reader.readLine();
+            System.out.println("Baris pertama: " + line);
+        } catch (IOException e) {
+            // Menangani exception jika terjadi kesalahan saat membaca file
+            System.out.println("Error: Gagal membaca file.");
+        } finally {
+            try {
+                // Menutup file, akan dieksekusi terlepas dari keberhasilan atau kegagalan blok try
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException e) {
+                // Menangani exception jika gagal menutup file
+                System.out.println("Error: Gagal menutup file.");
+            }
+        }
+    }
+}
